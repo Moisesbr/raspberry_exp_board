@@ -7,6 +7,10 @@ It also uses some other python libraries that are not installed on Raspbian by d
 
 # Installing dependences
 
+sudo apt-get update
+
+sudo apt-get upgrade
+
 sudo apt-get install python-rpi.gpio python3-rpi.gpio
 
 sudo apt-get install python-pip
@@ -17,6 +21,14 @@ sudo apt-get install python-smbus
 
 sudo apt-get install python-dev
 
+# Enable I2C
+On terminal execute 
+sudo raspi-config
+> Advanced options > Enable i2C 
+
+after
+Reboot system
+
 # Running application
 sudo python api_digital_inputs.py
 
@@ -25,7 +37,10 @@ sudo python api_relay.py
 
 #Examples request set high Transistor
 
+Simple example
 
+    curl -X POST -F "token=2e52d3ebf207e71f59" -F "relayname=relay9" -F "state=high" "http://192.168.1.108:9000/relay/on_off"
+    
 api_relay.py
 
     curl -X POST -F "token=2e52d3eb834e09f30509fcf4837478f207e71f59" -F "transistorname=transistor2" -F "state=low" "http://192.168.0.103:9000/relay/transistor_on_off"
