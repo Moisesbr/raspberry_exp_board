@@ -26,6 +26,8 @@ On terminal execute
 sudo raspi-config
 > Advanced options > Enable i2C 
 
+![alt tag](https://github.com/Moisesbr/raspberry_exp_board/blob/master/i2c_enable.png)
+
 after
 Reboot system
 
@@ -137,3 +139,5 @@ Example return:
         ]
     }
     }
+# Set up postman: 
+![alt tag](https://github.com/Moisesbr/raspberry_exp_board/blob/master/postman_example.png)
